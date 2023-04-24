@@ -1,0 +1,7 @@
+syntax = "proto3";
+package abirdcfly.chains.chains;
+
+option go_package = "github.com/Abirdcfly/chains/x/chains/types";
+
+// Msg defines the Msg service.
+service Msg {}

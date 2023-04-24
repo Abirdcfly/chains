@@ -1,0 +1,12 @@
+syntax = "proto3";
+package abirdcfly.chains.chains;
+
+import "gogoproto/gogo.proto";
+import "chains/chains/params.proto";
+
+option go_package = "github.com/Abirdcfly/chains/x/chains/types";
+
+// GenesisState defines the chains module's genesis state.
+message GenesisState {
+  Params params = 1 [(gogoproto.nullable) = false];
+}
