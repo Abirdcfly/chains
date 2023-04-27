@@ -2,6 +2,7 @@ package cmd
 
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
+	ethermint "github.com/evmos/ethermint/types"
 
 	"github.com/Abirdcfly/chains/app"
 )
@@ -19,5 +20,8 @@ func initSDKConfig() {
 	config.SetBech32PrefixForAccount(app.AccountAddressPrefix, accountPubKeyPrefix)
 	config.SetBech32PrefixForValidator(validatorAddressPrefix, validatorPubKeyPrefix)
 	config.SetBech32PrefixForConsensusNode(consNodeAddressPrefix, consNodePubKeyPrefix)
+	config.SetCoinType(ethermint.Bip44CoinType)
+	config.SetPurpose(sdk.Purpose)
+	config.SetFullFundraiserPath(ethermint.BIP44HDPath)
 	config.Seal()
 }
